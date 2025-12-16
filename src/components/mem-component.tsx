@@ -8,12 +8,12 @@ export default async function MemeComponent() {
 		<div className="flex flex-col">
 			{meme.error ? (
 				<>
-					<h1>Meme:</h1>
+					<h1 style={{ color: 'var(--accent1)' }}>Meme:</h1>
 					<p>Error Loading meme</p>
 				</>
 			) : (
 				<>
-					<h1>Meme:</h1>
+					<h1 style={{ color: 'var(--accent1)' }}>Meme:</h1>
 					<h2>{meme.meme?.name}</h2>
 					{meme.meme?.url && (
 						<Image

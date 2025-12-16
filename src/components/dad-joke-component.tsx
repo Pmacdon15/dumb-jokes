@@ -7,12 +7,12 @@ export default async function DadJokeComponent() {
 		<div className="flex flex-col">
 			{dadJoke.error ? (
 				<>
-					<h1>Dad Joke:</h1>
+					<h1 style={{ color: 'var(--accent1)' }}>Dad Joke:</h1>
 					<p>Error Loading joke</p>
 				</>
 			) : (
 				<>
-					<h1>Dad Joke:</h1>
+					<h1 style={{ color: 'var(--accent1)' }}>Dad Joke:</h1>
 					<p>{dadJoke.joke?.joke}</p>
 				</>
 			)}
