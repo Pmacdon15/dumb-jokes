@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
 	reactCompiler: true,
 	typedRoutes: true,
 	cacheComponents: true,
+
+	images: {
+		remotePatterns: [new URL('https://i.imgflip.com/**')],
+	},
 }
 
 export default nextConfig

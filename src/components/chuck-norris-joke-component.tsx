@@ -1,21 +1,10 @@
-export default async function JokeChuckNorrisComponent({
-	jokePromise,
-}: {
-	jokePromise: Promise<
-		| {
-				value: string
-				error?: undefined
-		  }
-		| {
-				error: string
-				value?: undefined
-		  }
-	>
-}) {
-	const joke = await jokePromise
+import { getChuckNorrisJoke } from '@/lib/dal/dal'
+
+export default async function JokeChuckNorrisComponent() {
+	const joke = await getChuckNorrisJoke()
 
 	return (
-		<div className="flex flex-col border p-8">
+		<div className="flex flex-col">
 			{joke.error ? (
 				<>
 					<h1>Chuck Norris Joke:</h1>

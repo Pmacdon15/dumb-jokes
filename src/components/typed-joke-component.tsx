@@ -1,14 +1,7 @@
-import type { Joke } from '@/lib/dal/dal'
+import { getTypedJoke } from '@/lib/dal/dal'
 
-export default async function TypedJokeComponent({
-	jokePromise
-}: {
-	jokePromise: Promise<{
-		joke?: Joke | undefined
-		error?: string
-	}>
-}) {
-	const joke = await jokePromise
+export default async function TypedJokeComponent() {
+	const joke = await getTypedJoke()
 
 	return (
 		<>
@@ -18,7 +11,7 @@ export default async function TypedJokeComponent({
 					<p>Error Loading joke</p>
 				</>
 			) : (
-				<div className="flex flex-col border p-8">
+				<div className="flex flex-col">
 					<h1>{joke.joke?.type} Joke:</h1>
 					<p>Setup : {joke.joke?.setup}</p>
 					<p>Punch Line: {joke.joke?.punchline}</p>

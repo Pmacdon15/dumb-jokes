@@ -1,17 +1,20 @@
 import JokeChuckNorrisComponent from '@/components/chuck-norris-joke-component'
+import DadJokeComponent from '@/components/dad-joke-component'
+import MemeComponent from '@/components/mem-component'
 import TypedJokeComponent from '@/components/typed-joke-component'
 
-import { getChuckNorrisJoke, getTypedJoke } from '@/lib/dal/dal'
-
 export default function Home() {
-	const jokeChuckNorrisPromise = getChuckNorrisJoke()
-	const jokeProgrammingPromise = getTypedJoke()
 	return (
-		<div className="flex min-h-screen items-center">
-			<h1>Dumb Jokes</h1>
-			<JokeChuckNorrisComponent jokePromise={jokeChuckNorrisPromise} />
-
-			<TypedJokeComponent jokePromise={jokeProgrammingPromise} />
-		</div>
+		<main className="flex min-h-screen flex-col items-center gap-12 p-24">
+			<h1 className="font-bold text-4xl">Dumb Jokes</h1>
+			<div className="flex flex-col gap-8 rounded-lg border-2 border-foreground)] p-8">
+				<JokeChuckNorrisComponent />
+				<TypedJokeComponent />
+				<DadJokeComponent />
+			</div>
+<div className="flex flex-col gap-8 rounded-lg border-2 border-foreground)] p-8">
+			<MemeComponent />
+			</div>
+		</main>
 	)
 }
